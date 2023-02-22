@@ -1,0 +1,23 @@
+.pictures{
+    display: flex;
+     justify-content: space-around;
+     margin: 15px 64px;
+     height: 370px; 
+ } 
+ .pictures h1{
+     padding: 0px 30px;
+     display: flex;
+ }
+ .pictures img{
+     /* padding: 0px 30px; */
+     height:200px;
+     width:200px;
+     border-radius: 50%;
+     margin: 20px 10px;
+     transition: 0.5s;
+     
+ }
+ .pictures img:hover{
+     /* background-color:black; */
+     opacity: 0.5;
+ }

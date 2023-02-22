@@ -1,0 +1,30 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(51, 53, 69);
+    padding:10px 64px;
+}
+.links li{
+    display:inline-block;
+    margin: 0px 15px;
+}
+.links a{
+    color:white;
+    text-decoration: none;
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+.links a:hover{
+    color: seashell;
+    /* text-decoration: overline; */
+    border-bottom: 2px solid gainsboro;
+
+}
+.links button{
+    background-color: rgb(258, 68, 100);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 18px;
+}

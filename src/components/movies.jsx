@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/movies.css"
 import MoviesData from "./moviesData";
 import Celebrity from "./celebrity"
@@ -6,68 +6,25 @@ import Celebrity from "./celebrity"
 
 
 const Movies = () => {
-    let db = [{
-        title: "Stranger Things",
-        genre: "sci-fi",
-        rating: "4",
-        language: "English",
-        id: 1
-    },
-    {
-        title: "breaking bad",
-        genre: "action",
-        rating: "4.5",
-        language: "English",
-        id: 2
-    },
-    {
-        title: "dark",
-        genre: "sci-fi",
-        rating: "4.5",
-        language: "german",
-        id: 3
-    },
-    {
-        title: "peaky blinders",
-        genre: "drama",
-        rating: "5",
-        language: "English",
-        id: 4
-    },
-    {
-        title: "family man",
-        genre: "thriller",
-        rating: "4",
-        language: "hindi",
-        id: 5
-    }]
-    let images = [{
+    let [movies,setMovies]=useState([])
+    let [celebs,setCelebs]=useState([]);
+    useEffect(()=>{
+    let fetchData=async()=>{
+let response = await fetch("http://localhost:4000/movies")
+let response2 = await fetch("http://localhost:4000/celebs")
+let data = await response.json()
+let data1 = await response2.json()
+setMovies(data)
+setCelebs(data1)
+    } 
+    fetchData()
+},[])
 
-        image: "https://img.indiaforums.com/person/320x240/0/2738-anushka-sharma.jpg?c=8yBDFA",
-        name: "1. ansushka sharma"
-    },
-    {
-        image: "https://img.indiaforums.com/person/320x240/1/0000-shraddha-kapoor.jpg?c=2mXCA1",
-        name: "2. shradha kapoor"
-    },
-    {
-        image: "https://img.indiaforums.com/person/320x240/0/0002-shah-rukh-khan.jpg?c=4sR1C4",
-        name: "3. shah rukh khan"
-    },
-    {
-        image: "https://img.indiaforums.com/person/320x240/0/2576-deepika-padukone.jpg?c=7rPD3F",
-        name: "4. Deepika padukone"
-    },
-    {
-        image: "https://img.indiaforums.com/person/320x240/0/0003-salman-khan.jpg?c=7cP0B0",
-        name: " 5. salman khan"
-    }]
-    // let [celebs,setCelebs]=useState(db)
-
-    let [movies, setmovies] = useState(db)
+  
+    // let [movie, setmovies] = useState([])
     let remove = (id, title) => {
         let result = movies.filter(x => x.id !== id)
-        setmovies(result)
+        setMovies(result)
         alert(`${title} has been removed from the favourites`)
     }
     
@@ -107,7 +64,7 @@ const Movies = () => {
                                 <h1>{x.name}</h1>
                             </div>
                         </div>)} */}
-                        <Celebrity datas={images}/>
+                        <Celebrity datas={celebs}/>
 
                 </div>
             </div>

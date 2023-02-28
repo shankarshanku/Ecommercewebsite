@@ -1,23 +1,23 @@
 import '../styles/Footer.css'
-import logo from "../images/logo.svg"
-import a from "../images/YouTube.png"
-import b from "../images/fb.png"
-import c from "../images/insta.png"
+// import logo from "/images/logo.svg"
+// import a from "/images/YouTube.png"
+// import b from "/images/fb.png"
+// import c from "/images/insta.png"
 
 const Footer = () => {
     let logos=[ {
-        logos:a
+        logos:"/images/logo.svg"
     },
     {
-        logos:b
+        logos:"/images/fb.png"
     },
     {
-        logos:c
+        logos:"/images/insta.png"
     }]
     return (
         <div className="footer">
             <div className="footerlogo">
-                <img src={logo} alt="" />
+                <img src="/images/logo.svg" alt="" />
             </div>
             <div className="footerlinks">
                 <ul>

@@ -1,0 +1,20 @@
+{
+  "company": [
+    {
+      "name": "shankar",
+      "age": "20",
+      "role": "developer",
+      "Salary": "600000",
+      "Company": "HCL",
+      "id": 1
+    },
+    {
+      "name": "aa",
+      "age": "12",
+      "role": "qa",
+      "salary": "12345",
+      "company": "tcs",
+      "id": 2
+    }
+  ]
+}

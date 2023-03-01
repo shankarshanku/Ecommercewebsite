@@ -1,23 +1,22 @@
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
-import Movies from "./components/movies"
-import {BrowserRouter,Routes,Route } from "react-router-dom";
-import AddMovies from "./components/addMovies";
-import PageNotFound from "./components/404"
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Navbar from "./components/navbar"
+import AddData from "./components/addData";
+import Home from "./components/home"
+import Content from"./components/content"
+
 function App(){
   return(
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter> 
       <Navbar/>
       <Routes> 
         <Route element={<Home/>} path="/"/>
-        <Route element={<Movies/>} path="/movies"/>
-        <Route element={<AddMovies/>} path="/addMovies"/>
-        <Route element={<PageNotFound/>} path="*"/>
+        <Route element ={<Content/>} path="/content"/>
+        <Route element={<AddData/>} path="/addData"/>
       </Routes>
-      <Footer/>
       </BrowserRouter>
+     
+      
     </div>
   )
 }
